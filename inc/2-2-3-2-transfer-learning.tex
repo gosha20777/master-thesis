@@ -1,0 +1,20 @@
+\paragraph{Простое дообучение}
+
+Для моделей, успешно обученных на предыдущем этапе, была применена стратегия простого дообучения (transfer learning) для соответствующих оставшихся наборов данных во всевозможных комбинациях. Этот процесс привел к генерации шести различных комбинаций данных.
+
+В процессе дообучения был задействован весь объем обучающей выборки. Каждая из моделей подвергалась дообучению в течение двух эпох.
+
+Результаты этого этапа дообучения представлены в сравнительной таблице \ref{tab:tl}. Эти данные отражают что применение стратегии transfer learning на 12\% уступает обучению с нуля.
+
+\begin{table}[H]
+    \caption{Результаты дообучения AW-Net. Метрики качества на тестовой выборке (PSNR, SSIM) дообучения AW-Net на различных наборах данных. На главной диагонали показаны етрики обучения с нуля.}\label{tab:tl}
+    \begin{tabular}{|p{3cm}p{3cm}|p{3cm}p{3cm}p{3cm}|}
+        \hline
+        \multicolumn{2}{|p{3cm}|}{\multirow{2}{*}{}}                     & \multicolumn{3}{p{5cm}|}{Целевой домен}                                                                                \\ \cline{3-5} 
+        \multicolumn{2}{|p{3cm}|}{}                                      & \multicolumn{1}{p{3cm}|}{Zurich RAW-to-RGB}    & \multicolumn{1}{p{3cm}|}{Mobile AIM21}         & Samsung S7 ISP       \\ \hline
+        \multicolumn{1}{|p{3cm}|}{Исходный домен}    & Zurich RAW-to-RGB & \multicolumn{1}{p{3cm}|}{\textbf{19.46, 0.73}} & \multicolumn{1}{p{3cm}|}{22.04, 0.79}          & 20.25, 0.74          \\ \cline{2-5} 
+        \multicolumn{1}{|p{3cm}|}{}                  & Mobile AIM21      & \multicolumn{1}{p{3cm}|}{16.97, 0.68}          & \multicolumn{1}{p{3cm}|}{\textbf{23.48, 0.87}} & 20.15, 0.74          \\ \cline{2-5} 
+        \multicolumn{1}{|p{3cm}|}{}                  & Samsung S7 ISP    & \multicolumn{1}{p{3cm}|}{16.74, 0.67}          & \multicolumn{1}{p{3cm}|}{21.89, 0.78}          & \textbf{22.16, 0.81} \\ \hline
+    \end{tabular}
+\end{table}
+

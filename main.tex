@@ -1,0 +1,33 @@
+%!TEX TS-program = xelatex
+
+% Author: Georgy Perevozchikov (gosha20777@live.com)
+% https://github.com/gosha20777/bachelor-diploma
+
+\documentclass[a4paper,14pt]{extarticle} % 14й шрифт
+\input{inc/preamble} % Подключаем преамбулу
+
+%%% Начало документа
+\begin{document}
+
+%\includepdf{title} % Титульный лист
+%\includepdf[pages={1,2}]{tech_task} % Техническое задание
+%\includepdf{reviewer_feedback} % Отзыв рецензента
+%\includepdf{supervisor_feedback} % Отзыв научного руководителя
+%\includepdf{essay} % Реферат
+
+\tableofcontents % Содержание 
+\clearpage
+
+\input{inc/0-intro} % Введение
+\input{inc/0-main-part} % Основная часть
+\input{inc/1-theory} % Теоретическая часть
+\input{inc/2-practice} % Практическая часть
+\input{inc/0-сonclusion} % Заключение
+\input{inc/0-bibliography} % Библиографический список
+
+% Приложения
+%\input{inc/a-app} % Исходный код Plugin system
+%\input{inc/b-app} % Руководство пользователя
+
+\end{document}
+%%% Конец документа
